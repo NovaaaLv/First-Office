@@ -1,0 +1,34 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import CityCard from "./../components/CityCard";
+
+export default function BrowseCityWrapper() {
+	return (
+		<section id="Cities" className="flex flex-col gap-[30px] mt-[100px]">
+			<div className="w-full max-w-[1130px] mx-auto flex items-center justify-between">
+				<h2 className="font-bold text-[32px] leading-[48px] text-nowrap">
+					You Can Choose <br />
+					Our Favorite Cities
+				</h2>
+				<a href="#" className="px-5 py-3 font-bold bg-white rounded-full">
+					Explore All City
+				</a>
+			</div>
+			<div className="w-full swiper">
+				<div className="swiper-wrapper">
+					<Swiper
+						direction="horizontal"
+						spaceBetween={30}
+						slidesPerView="auto"
+						slidesOffsetAfter={30}
+						slidesOffsetBefore={30}
+					>
+						<SwiperSlide className=" !w-fit first-of-type:pl-[calc((100%-1130px-60px)/2)] last-of-type:pr-[calc((100%-1130px-60px)/2)]">
+							<CityCard></CityCard>
+						</SwiperSlide>
+					</Swiper>
+				</div>
+			</div>
+		</section>
+	);
+}
+
