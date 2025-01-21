@@ -37,6 +37,8 @@ export default function Details() {
 
 	const baseUrl = "http://127.0.0.1:8000/storage";
 
+	const whatsappUrl = "https://wa.me";
+
 	return (
 		<>
 			<Navbar></Navbar>
@@ -279,56 +281,33 @@ export default function Details() {
 								<div className="flex items-center gap-4">
 									<div className="w-[60px] h-[60px] rounded-full overflow-hidden">
 										<img
-											src="/assets/images/photos/photo-1.png"
+											src={`${baseUrl}/${office?.salesAccount.thumbnail}`}
 											className="object-cover w-full h-full"
 											alt="photo"
 										/>
 									</div>
 									<div className="flex flex-col gap-[2px]">
-										<p className="font-bold">Masayoshi</p>
-										<p className="text-sm leading-[21px]">Sales Manager</p>
+										<p className="text-base font-bold ">
+											{office?.salesAccount.name}
+										</p>
+										<p className="text-sm leading-[21px]">
+											{office?.salesAccount.job_title}
+										</p>
 									</div>
 								</div>
 								<div className="flex items-center gap-3">
-									<a href="#">
+									<a
+										href={`${whatsappUrl}/${office?.salesAccount.phone_number}`}
+									>
 										<img
 											src="/assets/images/icons/call-green.svg"
 											className="w-10 h-10"
 											alt="icon"
 										/>
 									</a>
-									<a href="#">
-										<img
-											src="/assets/images/icons/chat-green.svg"
-											className="w-10 h-10"
-											alt="icon"
-										/>
-									</a>
-								</div>
-							</div>
-							<div className="flex items-center justify-between gap-3">
-								<div className="flex items-center gap-4">
-									<div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-										<img
-											src="/assets/images/photos/photo-2.png"
-											className="object-cover w-full h-full"
-											alt="photo"
-										/>
-									</div>
-									<div className="flex flex-col gap-[2px]">
-										<p className="font-bold">Fuji Ovina</p>
-										<p className="text-sm leading-[21px]">Sales Manager</p>
-									</div>
-								</div>
-								<div className="flex items-center gap-3">
-									<a href="#">
-										<img
-											src="/assets/images/icons/call-green.svg"
-											className="w-10 h-10"
-											alt="icon"
-										/>
-									</a>
-									<a href="#">
+									<a
+										href={`${whatsappUrl}/${office?.salesAccount.phone_number}`}
+									>
 										<img
 											src="/assets/images/icons/chat-green.svg"
 											className="w-10 h-10"
@@ -344,4 +323,3 @@ export default function Details() {
 		</>
 	);
 }
-
