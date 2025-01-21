@@ -22,6 +22,7 @@ return new class extends Migration
       $table->unsignedInteger("duration");
       $table->text("about");
       $table->foreignId("city_id")->constrained()->cascadeOnDelete();
+      $table->foreignID('account_sales')->constrained('sales_accounts')->onDelete('cascade');
       $table->string("slug")->unique();
       $table->softDeletes();
       $table->timestamps();

@@ -75,6 +75,12 @@ class OfficeSpaceResource extends Resource
           ->prefix('Days')
           ->required(),
 
+        Select::make('account_sales')
+          ->relationship('salesAccount', 'name')
+          ->searchable()
+          ->preload()
+          ->required(),
+
         Select::make('is_open')
           ->options([
             true => 'Open',

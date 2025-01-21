@@ -24,6 +24,7 @@ class OfficeSpaceResource extends JsonResource
       'thumbnail' => $this->thumbnail,
       'about' => $this->about,
       'city' => new CityResource($this->whenLoaded('city')),
+      'salesAccount' => new SalesAccountResource($this->whenLoaded('salesAccount')),
       'photos' => OfficeSpacePhotoResource::collection($this->whenLoaded('photos')),
       'benefits' => OfficeSpaceBenefitResource::collection($this->whenLoaded('benefits')),
     ];

@@ -6,6 +6,7 @@ export interface Office {
 	slug: string;
 	address: string;
 	city: City;
+	salesAccount: SalesAccount;
 	thumbnail: string;
 	photos: Photo[];
 	benefits: Benefit[];
@@ -20,6 +21,15 @@ interface Photo {
 interface Benefit {
 	id: number;
 	name: string;
+}
+
+export interface SalesAccount {
+	id: number;
+	name: string;
+	thumbnail: string;
+	phone_number: number;
+	email: string;
+	job_title: string;
 }
 
 export interface City {
@@ -43,4 +53,3 @@ export interface BookingDetails {
 	ended_at: string;
 	office: Office;
 }
-

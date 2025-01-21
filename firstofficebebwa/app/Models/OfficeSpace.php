@@ -24,6 +24,7 @@ class OfficeSpace extends Model
     'duration',
     'about',
     'city_id',
+    'account_sales',
     'slug',
   ];
 
@@ -46,5 +47,10 @@ class OfficeSpace extends Model
   public function benefits(): HasMany
   {
     return $this->hasMany(OfficeSpaceBenefit::class);
+  }
+
+  public function salesAccount()
+  {
+    return $this->belongsTo(SalesAccount::class, 'account_sales');
   }
 }
